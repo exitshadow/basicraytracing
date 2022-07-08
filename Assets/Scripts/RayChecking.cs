@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RayChecking : MonoBehaviour
 {
+    private Color color = Color.red;
+    public RaycastHit hit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +16,11 @@ public class RayChecking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * 100, Color.white);
-        if (Physics.Raycast(transform.position, transform.forward))
+        Debug.DrawRay(transform.position, transform.forward * 100, color, 3);
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            Debug.Log("hiiit!");
-        }
+            Debug.Log($"hit {hit.transform.name}.");
+            color = Color.green;
+        } else color = Color.red;
     }
 }
