@@ -5,11 +5,11 @@ using UnityEngine;
 public class CatchMaterial : MonoBehaviour
 {
     public RaycastHit hit;
-    Color color = Color.white;
 
     // Update is called once per frame
     void Update()
     {
+        Color color = Color.white;
         Debug.DrawRay(transform.position, transform.forward * 20, color, 3);
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 20)) {
