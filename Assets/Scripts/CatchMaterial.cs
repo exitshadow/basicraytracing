@@ -18,7 +18,7 @@ public class CatchMaterial : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * 20, color, 3);
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 20)) {
-            gameObject.GetComponent<Renderer>().material = hit.transform.GetComponent<Renderer>().material;
+            GetComponent<Renderer>().material = hit.transform.GetComponent<Renderer>().material;
             color = Color.blue;
         }
     }
