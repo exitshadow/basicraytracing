@@ -17,7 +17,7 @@ public class RayChecking : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * 100, color, 3);
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
         {
             Debug.Log($"hit {hit.transform.name}.");
             hit.transform.position += transform.forward * Time.deltaTime * 3f;
