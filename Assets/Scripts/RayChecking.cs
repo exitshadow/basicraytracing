@@ -20,6 +20,7 @@ public class RayChecking : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
             Debug.Log($"hit {hit.transform.name}.");
+            hit.transform.position += transform.forward * Time.deltaTime * 3f;
             color = Color.green;
         } else color = Color.red;
     }
